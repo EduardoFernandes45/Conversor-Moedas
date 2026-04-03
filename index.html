@@ -1,60 +1,76 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css">
-    <title>DevClub - Conversor de Moedas</title>
-  </head>
-  <body>
-    <img class="logo" src="./assets/logo.gif" alt="Logo-DevClub-Conversor-de-Moedas" />
-    <main>
-        <label>
-            Converter <b>de</b>
-            <select>
-                <option value="Real">R$ Real Brasileiro</option>
-                <option value="Dolar">US$ Dólar Americano</option>
-                <option value="Euro">€ Euro</option>
-                <option value="Libra">£ Libra Esterlina</option>
-                <option value="Bitcoin">₿ Bitcoin</option>
-            </select>
-        </label>
-        <label>
-            Converter <b>para</b>
-            <select class="currency-select">
-                <option value="Real">R$ Real Brasileiro</option>
-                <option value="Dolar">US$ Dólar Americano</option>
-                <option value="Euro">€ Euro</option>
-                <option value="Libra">£ Libra Esterlina</option>
-                <option value="Bitcoin">₿ Bitcoin</option>
-            </select>
-        </label>
-        <label>
-            Valor:
-            <input class="input-currency" type="number" placeholder="R$ 10.000,00" />
-        </label>
-        <button class="convert-button">Converter</button>
-        <section>
-            <div class="currency-box">
-                <img src="./assets/real.png" alt="logo-moeda-a-ser-convertida" />
-                <p class="currency">Real</p>
-                <p class="currency-value-to-convert">R$ 0,00</p>
-            </div>
-            
-            <img class="arrow-img" src="./assets/seta.png" alt="setas" />
+<!--
+  Arquivo HTML do Conversor de Moedas
+  Comentários adicionados em cada linha para explicação detalhada.
+-->
+<!doctype html> <!-- Declaração do tipo de documento HTML5 -->
+<html lang="pt-br"> <!-- Define o idioma do documento como português do Brasil -->
+  <head> <!-- Início da seção de cabeçalho -->
+    <meta charset="UTF-8" /> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Configura a viewport para responsividade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" /> <!-- Pré-conecta ao Google Fonts para carregamento rápido -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <!-- Pré-conecta aos recursos estáticos do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet" /> <!-- Importa a fonte Roboto do Google Fonts -->
+    <link rel="stylesheet" href="style.css" /> <!-- Vincula o arquivo CSS externo -->
+    <title>DevClub - Conversor de Moedas</title> <!-- Define o título da página exibido na aba do navegador -->
+  </head> <!-- Fim da seção de cabeçalho -->
+  <body> <!-- Início do corpo da página -->
+    <img class="logo" src="./assets/logo.gif" alt="Logo-DevClub-Conversor-de-Moedas" /> <!-- Exibe a imagem do logo com classe CSS e texto alternativo -->
 
-            <div class="currency-box">
-                <img class="currency-img" src="./assets/dolar.png" alt="logo-moeda-convertida" />
-                <p class="currency" id="currency-name">Dólar Americano</p>
-                <p class="currency-value">US$ 0.00</p>
-            </div>
+    <main> <!-- Início do container principal -->
+      <label> <!-- Início do rótulo para o seletor de moeda de origem -->
+        Converter <b>de</b> <!-- Texto do rótulo com ênfase -->
+        <select class="currency-select-convert"> <!-- Seletor para escolher a moeda de origem -->
+          <option value="Real">R$ Real Brasileiro</option> <!-- Opção para Real Brasileiro -->
+          <option value="Dolar" selected>US$ Dólar Americano</option> <!-- Opção para Dólar Americano, selecionada por padrão -->
+          <option value="Euro">€ Euro</option> <!-- Opção para Euro -->
+          <option value="Libra">£ Libra Esterlina</option> <!-- Opção para Libra Esterlina -->
+          <option value="Bitcoin">₿ Bitcoin</option> <!-- Opção para Bitcoin -->
+          <option value="Iene">¥ Iene Japonês</option> <!-- Opção para Iene Japonês -->
+          <option value="Peso">₱ Peso Mexicano</option> <!-- Opção para Peso Mexicano -->
+          <option value="Rupia">₹ Rupia Indiana</option> <!-- Opção para Rupia Indiana -->
+          <option value="Franco">CHF Franco Suíço</option> <!-- Opção para Franco Suíço -->
+        </select> <!-- Fim do seletor -->
+      </label> <!-- Fim do rótulo -->
 
-        </section>
-    </main>
-  
-</body>
-  <script src="./scripts.js"></script>
-</html>
+      <label> <!-- Início do rótulo para o seletor de moeda de destino -->
+        Converter <b>para</b> <!-- Texto do rótulo com ênfase -->
+        <select class="currency-select"> <!-- Seletor para escolher a moeda de destino -->
+          <option value="Real">R$ Real Brasileiro</option> <!-- Opção para Real Brasileiro -->
+          <option value="Dolar">US$ Dólar Americano</option> <!-- Opção para Dólar Americano -->
+          <option value="Euro">€ Euro</option> <!-- Opção para Euro -->
+          <option value="Libra">£ Libra Esterlina</option> <!-- Opção para Libra Esterlina -->
+          <option value="Bitcoin">₿ Bitcoin</option> <!-- Opção para Bitcoin -->
+          <option value="Iene">¥ Iene Japonês</option> <!-- Opção para Iene Japonês -->
+          <option value="Peso">₱ Peso Mexicano</option> <!-- Opção para Peso Mexicano -->
+          <option value="Rupia">₹ Rupia Indiana</option> <!-- Opção para Rupia Indiana -->
+          <option value="Franco">CHF Franco Suíço</option> <!-- Opção para Franco Suíço -->
+        </select> <!-- Fim do seletor -->
+      </label> <!-- Fim do rótulo -->
+
+      <label> <!-- Início do rótulo para o campo de entrada de valor -->
+        Valor: <!-- Texto do rótulo -->
+        <input class="input-currency" type="number" placeholder="R$ 10.000,00" /> <!-- Campo de entrada numérica com placeholder -->
+      </label> <!-- Fim do rótulo -->
+
+      <button class="convert-button">Converter</button> <!-- Botão para executar a conversão -->
+
+      <section> <!-- Início da seção de resultados -->
+        <div class="currency-box"> <!-- Container para a moeda de origem -->
+          <img id="currency-img-from" src="./assets/real.png" alt="logo-moeda-a-ser-convertida" /> <!-- Imagem da moeda de origem -->
+          <p class="currency" id="currency-name-from">Real</p> <!-- Nome da moeda de origem -->
+          <p class="currency-value-to-convert">R$ 0,00</p> <!-- Valor formatado da moeda de origem -->
+        </div> <!-- Fim do container -->
+
+        <img class="arrow-img" src="./assets/seta.png" alt="setas" /> <!-- Imagem da seta separadora -->
+
+        <div class="currency-box"> <!-- Container para a moeda de destino -->
+          <img class="currency-img" src="./assets/dolar.png" alt="logo-moeda-convertida" /> <!-- Imagem da moeda de destino -->
+          <p class="currency" id="currency-name">Dólar Americano</p> <!-- Nome da moeda de destino -->
+          <p class="currency-value">US$ 0.00</p> <!-- Valor convertido da moeda de destino -->
+        </div> <!-- Fim do container -->
+      </section> <!-- Fim da seção -->
+    </main> <!-- Fim do container principal -->
+
+    <script src="./scripts.js"></script> <!-- Vincula o arquivo JavaScript externo -->
+  </body> <!-- Fim do corpo da página -->
+</html> <!-- Fim do documento HTML -->

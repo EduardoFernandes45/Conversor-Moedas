@@ -1,99 +1,225 @@
+/* ============================================
+   RESET GLOBAL - Remove espaçamentos padrão
+   ============================================ */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    outline: none;
+    margin: 0;                          /* Remove margem padrão de todos os elementos */
+    padding: 0;                         /* Remove padding padrão de todos os elementos */
+    box-sizing: border-box;             /* Inclui padding/border na largura total do elemento */
+    font-family: 'Roboto', sans-serif;  /* Define a fonte de todo o site como Roboto */
+    outline: none;                      /* Remove o outline padrão dos inputs e buttons */
 }
+
+/* ============================================
+   LOGOTIPO
+   ============================================ */
 
 .logo {
-    width: 300px;
-    display: block;
-    margin: 20px auto;
+    max-width: 300px;                   /* Largura máxima do logo em 300 pixels */
+    width: 80%;                        /* Largura responsiva: 80% da tela */
+    display: block;                     /* Torna a imagem uma display block (não inline) */
+    margin: 20px auto;                  /* Centraliza horizontalmente e adiciona espaço vertical */
 }
+
+/* ============================================
+   BACKGROUND DO CORPO DA PÁGINA
+   ============================================ */
 
 body {
-    background-color: #8A51FC;
+    background-color: #8A51FC;          /* Cor de fundo roxo (Purple) para toda a página */
+    min-height: 100vh;                  /* Altura mínima da viewport para centralização vertical */
+    display: flex;                      /* Ativa flexbox para centralizar conteúdo */
+    flex-direction: column;             /* Organiza em coluna */
+    align-items: center;                /* Centraliza horizontalmente */
+    justify-content: center;            /* Centraliza verticalmente */
 }
+
+/* ============================================
+   CONTAINER PRINCIPAL (Card do Conversor)
+   ============================================ */
 
 main {
-    width: 375px;
-    background: #F4F4F4;
-    border-radius: 20px;
-    margin: 0 auto 40px;
-    padding: 44px 24px 23px;
+    max-width: 375px;                   /* Largura máxima do card em 375 pixels */
+    width: 90%;                        /* Largura responsiva: 90% da tela */
+    background: #F4F4F4;                /* Cor de fundo cinza claro para o card */
+    border-radius: 20px;                /* Arredonda os cantos do card em 20 pixels */
+    margin: 20px auto;                  /* Centraliza horizontalmente e adiciona espaço */
+    padding: 44px 24px 23px;            /* Espaço interno: 44px (topo), 24px (laterais), 23px (fundo) */
 }
 
+/* ============================================
+   RÓTULOS (Labels do formulário)
+   ============================================ */
+
 label {
-    color: #777777;
-    font-weight: 400;
-    font-size: 14px;
+    color: #777777;                     /* Cor cinza escura para o texto das labels */
+    font-weight: 400;                   /* Peso normal da fonte (não bold) */
+    font-size: 14px;                    /* Tamanho do texto das labels em 14 pixels */
 }
+
+/* ============================================
+   INPUTS E SELECTS
+   ============================================ */
 
 select,
 input {
-    background: #ffffff;
-    border: 1px solid #bbbbbb;
-    border-radius: 4px;
-    height: 40px;
-    width: 100%;
-    margin-bottom: 24px;
-    appearance: none;
-    padding-left: 18px;
-    font-weight: 700;
-    font-size: 16px;
-    color: #555555;
-    cursor: pointer;
+    background: #ffffff;                /* Cor de fundo branca para os campos */
+    border: 1px solid #bbbbbb;          /* Borda cinza de 1 pixel de espessura */
+    border-radius: 4px;                 /* Arredonda levemente os cantos (4 pixels) */
+    height: 40px;                       /* Altura fixa dos campos em 40 pixels */
+    width: 100%;                        /* Ocupam 100% da largura do container pai */
+    margin-bottom: 24px;                /* Espaço inferior entre os campos */
+    appearance: none;                   /* Remove a aparência padrão do navegador (seta do select) */
+    padding-left: 18px;                 /* Espaço interno à esquerda para o texto */
+    font-weight: 700;                   /* Texto em negrito (bold) */
+    font-size: 16px;                    /* Tamanho do texto em 16 pixels */
+    color: #555555;                     /* Cor do texto cinza escura */
+    cursor: pointer;                    /* Cursor vira a mãozinha ao passar sobre */
 }
+
+/* ============================================
+   BOTÃO CONVERTER
+   ============================================ */
 
 button {
-    background: #772FD3;
-    border-radius: 5px;
-    width: 100%;
-    border: none;
-    height: 48px;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 18px;
-    cursor: pointer;
+    background: #772FD3;                /* Cor de fundo roxo escuro (Purple) */
+    border-radius: 5px;                 /* Arredonda levemente os cantos (5 pixels) */
+    width: 100%;                        /* Botão ocupa 100% da largura do container */
+    border: none;                       /* Remove qualquer borda do botão */
+    height: 48px;                       /* Altura do botão em 48 pixels */
+    color: #ffffff;                     /* Texto em branco */
+    font-weight: 700;                   /* Texto em negrito (bold) */
+    font-size: 18px;                    /* Tamanho do texto em 18 pixels */
+    cursor: pointer;                    /* Cursor vira a mãozinha ao passar */
 }
+
+/* ============================================
+   EFEITO HOVER DO BOTÃO (quando mouse passa)
+   ============================================ */
 
 button:hover {
-    opacity: 0.8;
+    opacity: 0.8;                       /* Reduz a opacidade do botão para 80%, deixando mais claro */
 }
+
+/* ============================================
+   EFEITO ACTIVE DO BOTÃO (quando clica)
+   ============================================ */
 
 button:active {
-    opacity: 0.6;
+    opacity: 0.6;                       /* Reduz ainda mais a opacidade para 60% ao clicar */
 }
+
+/* ============================================
+   SEÇÃO COM RESULTADOS DA CONVERSÃO
+   ============================================ */
 
 section {
-    border: 1px solid #772FD3;
-    border-radius: 20px;
-    margin-top: 36px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    border: 1px solid #772FD3;          /* Borda roxo escuro ao redor da seção */
+    border-radius: 20px;                /* Arredonda bastante os cantos (20 pixels) */
+    margin-top: 36px;                   /* Margem superior de 36 pixels (espaço do botão) */
+    padding: 12px;                      /* Espaço interno de 12 pixels em todos os lados */
+    display: flex;                      /* Ativa o flexbox para organizar elementos em coluna */
+    flex-direction: column;              /* Organiza os elementos em coluna (vertical) */
+    align-items: center;                /* Centraliza horizontalmente os elementos */
 }
+
+/* ============================================
+   SETA ENTRE AS DUAS MOEDAS
+   ============================================ */
 
 .arrow-img {
-    margin: 15px 0;
+    margin: 15px 0;                     /* Espaço vertical de 15 pixels acima e abaixo da seta */
 }
+
+/* ============================================
+   CAIXA DE MOEDA (Real e Moeda Convertida)
+   ============================================ */
 
 .currency-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
+    display: flex;                      /* Ativa o flexbox para organizar elementos */
+    flex-direction: column;              /* Organiza em coluna (vertical) */
+    align-items: center;                /* Centraliza horizontalmente os elementos */
+    gap: 4px;                           /* Espaço de 4 pixels entre os elementos filhos */
 }
+
+/* ============================================
+   NOME DA MOEDA
+   ============================================ */
 
 .currency {
-    color: #777777;
-    font-size: 14px;   
+    color: #777777;                     /* Cor cinza escura para o nome da moeda */
+    font-size: 14px;                    /* Tamanho do texto em 14 pixels */   
 }
 
+/* ============================================
+   VALOR DA MOEDA (Convertido e Original)
+   ============================================ */
+
 .currency-value, .currency-value-to-convert {
-    color: #555555;
-    font-weight: 700;
-    font-size: 20px;
+    color: #555555;                     /* Cor cinza escura para o valor */
+    font-weight: 700;                   /* Texto em negrito (bold) */
+    font-size: 20px;                    /* Tamanho grande do valor em 20 pixels */
+}
+
+/* ============================================
+   RESPONSIVIDADE - Media Queries
+   ============================================ */
+
+/* Para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    main {
+        width: 95%;                     /* Largura maior em telas pequenas */
+        padding: 30px 20px;             /* Reduz padding interno */
+        margin: 10px auto;              /* Reduz margem */
+    }
+
+    .logo {
+        width: 90%;                     /* Logo maior em telas pequenas */
+        margin: 10px auto;              /* Reduz margem */
+    }
+
+    label {
+        font-size: 12px;                /* Reduz tamanho da fonte das labels */
+    }
+
+    select, input {
+        font-size: 14px;                /* Reduz tamanho da fonte dos campos */
+        height: 35px;                   /* Reduz altura dos campos */
+        padding-left: 12px;             /* Ajusta padding esquerdo */
+    }
+
+    button {
+        font-size: 16px;                /* Reduz tamanho da fonte do botão */
+        height: 40px;                   /* Reduz altura do botão */
+    }
+
+    .currency {
+        font-size: 12px;                /* Reduz tamanho da fonte do nome da moeda */
+    }
+
+    .currency-value, .currency-value-to-convert {
+        font-size: 18px;                /* Reduz tamanho da fonte do valor */
+    }
+}
+
+/* Para telas menores que 480px (celulares pequenos) */
+@media (max-width: 480px) {
+    main {
+        width: 98%;                     /* Largura quase total em telas muito pequenas */
+        padding: 20px 15px;             /* Reduz ainda mais o padding */
+    }
+
+    .logo {
+        width: 95%;                     /* Logo ainda maior */
+    }
+
+    select, input {
+        font-size: 12px;                /* Fonte ainda menor */
+        height: 30px;                   /* Altura menor */
+    }
+
+    button {
+        font-size: 14px;                /* Fonte menor para o botão */
+        height: 35px;                   /* Altura menor */
+    }
 }
